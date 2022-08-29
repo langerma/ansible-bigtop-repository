@@ -1,0 +1,15 @@
+---
+# add RPM repo
+
+- name: add Apache Bigtop Repo
+  ansible.builtin.yum_repository:
+    name: bigtop
+    description: bigtop repo
+    baseurl: http://repos.bigtop.apache.org/releases/3.1.1/rockylinux/8/$basearch
+    gpgkey: https://dist.apache.org/repos/dist/release/bigtop/KEYS
+    gpgcheck: yes
+    enabled: yes
+
+- name: update yum cache
+  ansible.builtin.command: yum update
+  register: update_repo

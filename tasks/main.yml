@@ -1,0 +1,15 @@
+---
+# tasks for installing apache bigtop repo
+
+- name: Install on RedHat
+  include_tasks: "RedHat.yml"
+  when:
+    - ansible_os_family == "RedHat"
+
+- name: Install on Debian
+  include_tasks: "Debian.yml"
+  when:
+    - ansible_os_family == "Debian"
+
+- debug:
+    var: update_repo.stdout_lines
