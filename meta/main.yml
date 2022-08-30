@@ -1,0 +1,20 @@
+---
+galaxy_info:
+  author: Markus Langer
+  role_name: ansible-bigtop-repository
+  description: install ansible bigtop repository
+  license: BSD 3-Clause License
+  company: langerma.org
+  min_ansible_version: "2.10"
+
+  platforms:
+    - name: RedHat
+      versions:
+        - 8
+
+  galaxy_tags:
+    - zookeeper
+    - hadoop
+    - hbase
+    - kafka
+    - zeppelin
