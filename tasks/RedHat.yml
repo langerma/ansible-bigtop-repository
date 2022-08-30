@@ -5,7 +5,7 @@
   ansible.builtin.yum_repository:
     name: bigtop
     description: bigtop repo
-    baseurl: http://repos.bigtop.apache.org/releases/3.1.1/rockylinux/8/$basearch
+    baseurl: http://repos.bigtop.apache.org/releases/{{ bigtop_version }}/rockylinux/8/$basearch
     gpgkey: https://dist.apache.org/repos/dist/release/bigtop/KEYS
     gpgcheck: yes
     enabled: yes
