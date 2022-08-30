@@ -1,2 +1,13 @@
 ---
-# add DEB repo
+# add APT repo
+- name: add bigtop key and repo
+  block:
+    - name: somerepo |no apt key
+      ansible.builtin.get_url:
+        url: https://dlcdn.apache.org/bigtop/bigtop-3.1.1/repos/debian-11/bigtop.list.asc
+        dest: /etc/apt/trusted.gpg.d/bigtop.list.asc
+
+    - name: somerepo | apt source
+      ansible.builtin.apt_repository:
+      repo: "deb [arch=amd64 signed-by=/etc/apt/trusted.gpg.d/bigtop.list.asc] http://repos.bigtop.apache.org/releases/{{ bigtop_version }}/debian/11/$(ARCH) bigtop contrib"
+      state: present
