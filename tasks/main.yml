@@ -10,6 +10,3 @@
   include_tasks: "Debian.yml"
   when:
     - ansible_os_family == "Debian"
-
-- debug:
-    var: update_repo.stdout_lines

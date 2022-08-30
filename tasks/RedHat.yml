@@ -9,7 +9,3 @@
     gpgkey: https://dist.apache.org/repos/dist/release/bigtop/KEYS
     gpgcheck: yes
     enabled: yes
-
-- name: update yum cache
-  ansible.builtin.command: yum update
-  register: update_repo
